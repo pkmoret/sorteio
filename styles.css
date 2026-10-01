@@ -1,0 +1,96 @@
+/* Seletor Universal: Remove margens e paddings padrão, define box-sizing e fonte */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* O Box Model: padding e border são incluídos na largura/altura total do elemento */
+    font-family: "Roboto", sans-serif;
+    /* Removemos o background-color: black; daqui, vamos aplicá-lo ao body */
+}
+
+/* Corpo da Página: Nosso "grande contêiner" */
+body {
+    background-color: black; /* O fundo preto agora está aqui, apenas no corpo */
+    display: flex; /* Transforma o body em um contêiner flexível */
+    flex-direction: column; /* Os itens filhos (logo e .main) ficarão em coluna */
+    align-items: center; /* Centraliza horizontalmente os itens filhos do body */
+    justify-content: center; /* Centraliza verticalmente os itens filhos do body */
+    min-height: 100vh; /* Garante que o body ocupe 100% da altura da viewport para centralização vertical */
+    gap: 32px; /* Espaçamento entre os itens filhos diretos do body (logo e .main) */
+}
+
+/* Parágrafo de Título */
+p {
+    color: rgb(244, 246, 246);
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center; /* Garante que o texto dentro do parágrafo esteja centralizado */
+}
+
+/* Logo da DevSorteio */
+.logodevsorteio {
+    /* As margens fixas (margin: 50px 0 0 404px;) foram removidas. */
+    /* O body como contêiner flex já está centralizando horizontalmente. */
+    max-width: 250px; /* Define uma largura máxima para a imagem, tornando-a responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+    /* O gap no body já adiciona espaçamento abaixo */
+}
+
+/* Contêiner Principal (.main) */
+.main {
+    /* A margem fixa (margin-left: 400px;) foi removida. */
+    /* O body como contêiner flex já está centralizando horizontalmente este bloco. */
+    display: flex; /* Transforma o .main em um contêiner flexível */
+    flex-direction: column; /* Os itens filhos (p, inputs, button) ficarão em coluna */
+    align-items: center; /* Centraliza horizontalmente os itens filhos do .main */
+    justify-content: center; /* Centraliza verticalmente (se houver espaço extra) */
+    gap: 16px; /* Adiciona espaçamento entre os itens filhos diretos do .main */
+    padding: 40px; /* Um "respiro" interno para o conteúdo do .main */
+    background-color: #1a1a1a; /* Um tom de preto um pouco diferente para o contêiner, para destaque */
+    border-radius: 12px; /* Bordas arredondadas para o contêiner */
+    max-width: 90%; /* Limita a largura do contêiner para não esticar demais em telas grandes */
+    width: 400px; /* Largura base do contêiner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidade */
+}
+
+/* Campos de Input */
+.inputnumero {
+    background-color: rgb(64, 64, 64);
+    width: 100%; /* Ocupa 100% da largura do seu pai (.main), respeitando o padding */
+    max-width: 342px; /* Limita a largura máxima do input */
+    height: 74px;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px; /* Ajustei o tamanho da fonte para caber melhor */
+    font-weight: 500;
+    color: #FFFFFF; /* Cor do texto digitado */
+    padding: 0 20px; /* Padding interno para o texto não ficar colado nas bordas */
+    text-align: center; /* Centraliza o texto do placeholder e digitado */
+}
+
+/* Estilo do Placeholder */
+.inputnumero::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Cor mais suave para o placeholder */
+}
+
+/* Botão Sortear */
+button {
+    background-color: #AEC346;
+    color: #FFFFFF;
+    width: 190px;
+    /* height: 20px; corrigido */
+    height: 60px; /* Altura adequada para o botão */
+    border: none;
+    border-radius: 8px;
+    /* padding: 8; corrigido */
+    padding: 10px 20px; /* Padding para o texto do botão não ficar colado */
+    font-size: 20px; /* Tamanho da fonte para o botão */
+    font-weight: bold;
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse no botão */
+button:hover {
+    background-color: #8fa13a; /* Escurece um pouco ao passar o mouse */
+}
